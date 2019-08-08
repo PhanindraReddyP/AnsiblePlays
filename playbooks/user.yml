@@ -1,0 +1,18 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: epel release installation
+    yum:
+      name: epel-release
+      state: present
+  - name: Nginx installation
+    yum:
+      name: nginx
+      state: present
+  - name: enable and start nginx
+    service:
+      name: nginx
+      state: started
+      enabled: yes
+      

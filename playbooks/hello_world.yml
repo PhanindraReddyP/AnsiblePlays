@@ -1,0 +1,22 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: This task will ping
+      ping:
+    - name: Install the latest version of Apache
+      yum: 
+        name: httpd
+        state: latest
+    - name: Ensure a list of packages installed
+      yum: 
+        name: "{{ packages }}"
+      vars:
+        packages:
+        - httpd
+        - httpd-tools
+    - name: Start the Apache
+      service:
+        name: httpd
+        state: started
+        enabled: yes

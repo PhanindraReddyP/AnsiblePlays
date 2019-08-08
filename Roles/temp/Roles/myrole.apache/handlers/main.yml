@@ -1,0 +1,10 @@
+---
+# handlers file for myrole.apache
+- name: restart debian myrole.apache
+  service:
+    name: "{{apache_package_deb}}"
+    state: restarted
+- name: restart RHEL apache
+  service:
+    name: "{{apache_package_redhat}}"
+    state: restarted

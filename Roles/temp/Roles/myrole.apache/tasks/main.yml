@@ -1,0 +1,34 @@
+---
+# tasks file for myrole.apache
+- name: install apache on Debian
+  apt:
+    name: "{{apache_package_deb}}"
+    state: present
+  when: ansible_os_family == "Debian"
+- name: install apache on RedHat
+  yum:
+    name: "{{apache_package_redhat}}"
+    state: present
+  when: ansible_os_family == "RedHat"
+- name: set service name for Debian
+  set_fact:
+    apache_package: "{{apache_package_deb}}"
+  when: ansible_os_family == "Debian"
+- name: set service name for RedHat
+  set_fact:
+    apache_package: "{{apache_package_redhat}}"
+  when: ansible_os_family == "RedHat"
+- name: Enable the service and start
+  service:
+    name: "{{apache_package}}"
+    state: started
+    enabled: yes
+- name: Using template file
+  template:
+    src: index.html.j2
+    dest: "{{apache_homepage_path}}"
+- name: test by print
+  debug:
+    msg: firing notification for redhat
+  notify: restart RHEL apache
+  when: ansible_os_family == "RedHat"

@@ -1,0 +1,5 @@
+---
+# vars file for myrole.apache
+apache_package_deb: apache2
+apache_package_redhat: httpd
+apache_homepage_path: /var/www/html/index.html
