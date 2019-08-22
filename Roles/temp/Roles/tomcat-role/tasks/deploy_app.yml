@@ -1,6 +1,0 @@
----
-- name: Copy gameoflife.war to tomcat webapps
-  copy:
-    src: /home/ansible/AnsiblePlays/Roles/temp/Roles/gameoflife.war
-    dest: /usr/share/tomcat/webapps/
-    mode: '0644'
