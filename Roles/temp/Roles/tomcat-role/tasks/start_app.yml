@@ -1,6 +1,4 @@
 ---
-- name: Gather information from EC2
-  action: ec2_facts
 - name: Install yum utils
   package:
     name: yum-utils

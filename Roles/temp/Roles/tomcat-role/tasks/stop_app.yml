@@ -1,6 +1,4 @@
 ---
-- name: Gather information from EC2
-  action: ec2_facts
 - name: stop tomcat app on {{ansible_hostname}}
   service:
     name: tomcat:8.0.53
