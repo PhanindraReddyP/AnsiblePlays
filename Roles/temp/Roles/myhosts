@@ -1,6 +1,8 @@
 localhost
 ip-172-31-93-57.ec2.internal
 
+ip-172-31-93-165.ec2.internal
+
 [appservers]
 ip-172-31-93-57.ec2.internal
 ip-172-31-90-252.ec2.internal

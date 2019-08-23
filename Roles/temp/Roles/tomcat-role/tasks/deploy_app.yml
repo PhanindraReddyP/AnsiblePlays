@@ -2,9 +2,9 @@
 - name: Copy gameoflife.war to tomcat webapps
   copy:
     src: /home/ansible/AnsiblePlays/Roles/temp/Roles/gameoflife.war
-    dest: /usr/share/tomcat/webapps/
+    dest: /opt/apache-tomcat-8.5.28/webapps/gameoflife.war
     mode: '0644'
 - name: print notification
   debug:
     msg: Restarted Tomcat Server after copying war file
-  notify: restart tomcat8
+  notify: restart tomcat

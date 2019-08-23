@@ -1,5 +1,5 @@
 ---
-- hosts: appservers
+- hosts: ip-172-31-93-165.ec2.internal
   become: yes
   roles:
   - tomcat-role

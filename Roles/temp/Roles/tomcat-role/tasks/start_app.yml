@@ -13,8 +13,7 @@
     dest: "/opt/"
     remote_src: yes
   sudo: True
-- name: start tomcat app on {{ansible_hostname}}
-  service:
-    name: tomcat8
-    state: started
-    enabled: yes
+- name: Run Tomcat on {{ansible_hostname}}
+  shell: ./startup.sh
+  args:
+    chdir: /opt/apache-tomcat-{{ tomcat8_version }}/bin
