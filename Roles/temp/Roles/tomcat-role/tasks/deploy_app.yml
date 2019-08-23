@@ -4,3 +4,7 @@
     src: /home/ansible/AnsiblePlays/Roles/temp/Roles/gameoflife.war
     dest: /usr/share/tomcat/webapps/
     mode: '0644'
+- name: print notification
+  debug:
+    msg: Restarted Tomcat Server after copying war file
+  notify: restart tomcat8

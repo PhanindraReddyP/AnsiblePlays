@@ -1,5 +1,5 @@
 ---
 - name: stop tomcat app on {{ansible_hostname}}
   service:
-    name: tomcat:8.0.53
+    name: tomcat
     state: stopped
